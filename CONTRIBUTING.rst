@@ -174,7 +174,7 @@ can be installed via package managers like ``scoop`` or ``chocolatey``.
     make doctest        # run all docstring tests via tox (matches CI)
     make docs           # build the full documentation via tox (matches CI)
     make docs-test      # test the built documentation via tox (matches CI)
-    make integration PROJECT=<name>  # run integration tests for trame/geovista/mne/pyvistaqt
+    make integration PROJECT=<name>  # run integration tests for trame/geovista/mne/pyvistaqt/playwright
 
 ``make test``, ``make test-core``, and ``make test-plotting`` all
 invoke tox environments defined in ``tox.ini`` so they run with the
@@ -1414,7 +1414,7 @@ For more details see :ref:`add_example_example`.
 Adding a New Dataset
 ^^^^^^^^^^^^^^^^^^^^
 If you have a dataset that you want to feature or want to include as part
-of a full gallery example, add it to `pyvista/vtk-data <https://github.com/pyvista/vtk-data/>`_
+of a full gallery example, add it to `pyvista/data <https://github.com/pyvista/data/>`_
 and follow the directions there. You will then need to add a new function to
 download the dataset in ``pyvista/examples/downloads.py``. This might be as easy as:
 
@@ -1774,7 +1774,7 @@ status check label regardless of if it is self hosted.
 
   macOS:
     name: ${{ matrix.job-name }}
-    needs: cache-vtk-data
+    needs: cache-pyvista-data
     strategy:
       fail-fast: false
       matrix:
